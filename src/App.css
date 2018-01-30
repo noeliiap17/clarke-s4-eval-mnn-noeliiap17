@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+	height: 100vh;
+	width: 100vW;
 }
 
 .App-header {
@@ -12,47 +14,38 @@
 .App-title {
   font-size: 2em;
 }
-.Container__page {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
+
 .Container__characters{
-	width: 100%;
+	list-style: none;
+	display: grid;
 
 }
-.Container__person{
-	width: 20%;
+
+.Characters__item {
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-.listPerson{
-	width: 100vw;
-	list-style: none;
-}
+
 .Seeker {
 	margin: 20px;
 	width: 60%;
-}
-.button__filter {
-	width: 10%;
-	border-radius: 5px;
-	margin-left: 20px;
-	border-style: dotted;
-
 }
 .image{
 	width: 200px;
 	height: 250px;
 }
-/*.App-intro {
-  font-size: large;
+
+@media all and (min-width:768px) {
+	.Container__characters{
+	grid-template-columns: repeat(3, 1fr);
+	}
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
+	@media all and (min-width:1020px) {
+		.Container__characters{
+		grid-template-columns: repeat(4, 1fr);
+		}
+}

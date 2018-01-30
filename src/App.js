@@ -17,7 +17,8 @@ class App extends Component {
 		.then(request => request.json())
 		.then(json => {
 			this.setState({
-				characters: json
+				characters: json,
+				showOnlyShearch: true
 			});
 		//	console.log(this.state.characters);
 		});
@@ -29,20 +30,26 @@ class App extends Component {
 
 	for(const listCharacters of this.state.characters){
 
-		listName.push(<li className="listPerson"><div class="Container__person">
+		listName.push(<li className="Characters__item">
+
 			<h2>{listCharacters.name}</h2>
-			<img src={listCharacters.image} className="image"/>
+			<img src={listCharacters.image} className="image" />
 			<span>{listCharacters.house}</span>
 			<span>{listCharacters.alive? 'vivo': 'muerto'}</span>
 
-			</div></li>);
+			</li>);
 	}
 	return listName;
 }
+	filterCharacters() {
+		const filter = (event) => {
+			const input = document.getElementById('Seeker');
+			const valorInput = event.target.value;
+			if (valorInput.includes(valorInput)){
 
-filterCharacters() {
-	
-}
+			}
+		}
+	}
 
 
   render() {
@@ -54,12 +61,9 @@ filterCharacters() {
         </header>
 				<main>
 				<div className="Container__page">
-				<input type="text" className="Seeker" name="Seeker" />
-					<div className="Container__characters">
-					<ul>{this.paintCharacters()}</ul>
-					</div>
+				<input type="text" id="Seeker" className="Seeker" name="Seeker" />
+					<ul className="Container__characters">{this.paintCharacters()}</ul>
 				</div>
-
 				</main>
       </div>
     );
