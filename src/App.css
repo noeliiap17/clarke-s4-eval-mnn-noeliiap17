@@ -76,6 +76,10 @@
 	background-image: url(./images/hufflepuff.png);
 	background-size: contain;
 }
+.house_ {
+	background-image: url(./images/howards.png);
+
+}
 .alive_dead {
 	background-image: url(./images/calavera.jpg);
 	background-size: contain;

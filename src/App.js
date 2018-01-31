@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Image_skull './calavera-55.jpg'
-//import Charecters from './Charecters';
+// import CharacterCard from './components/Characters';
 
 class App extends Component {
 
@@ -38,7 +37,8 @@ class App extends Component {
 			</div>
 			</li>)
 		});
-	}
+}
+
 
 
 	handleChange(event){
@@ -59,8 +59,10 @@ console.log(this.state.valorInput)
         </header>
 				<main>
 				<div className="Container__page">
-				<input type="text" id="Seeker" className="Seeker" name="Seeker" onChange={this.handleChange}></input>
-					<ul className="Container__characters">{this.paintCharacters()}</ul>
+				<input type="text" id="Seeker" className="Seeker" name="Seeker" onChange={this.handleChange} placeholder="Search your favourite character"></input>
+					<ul className="Container__characters">{this.paintCharacters()}
+
+					</ul>
 				</div>
 				</main>
       </div>
