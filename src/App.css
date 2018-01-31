@@ -45,11 +45,18 @@
 	border-radius: 20px;
 }
 
+.image:hover {
+	width: 200px;
+	height: 250px;
+	border-radius: 100%;
+}
+
 .container__info{
+	padding: 20px;
 	width: 200px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	text-align: center;
 }
@@ -60,8 +67,9 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 10px;
+	}
 
-}
+
 .house_gryffindor {
 	background-image: url(./images/gryffindor.png);
 }
