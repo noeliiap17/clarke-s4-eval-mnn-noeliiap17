@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+// import Image_skull './calavera-55.jpg'
 //import Charecters from './Charecters';
 
 class App extends Component {
@@ -28,11 +29,13 @@ class App extends Component {
 		const listName = this.state.characters.filter(item => item.name.toLowerCase().includes(this.state.valorInput));
 
 		return listName.map(item => {
-			return (<li className="Characters__item">
+			return (<li className={`Characters__item houseColor_${item.house.toLowerCase()}`}>
 			<h2>{item.name}</h2>
 			<img src={item.image} className="image" />
-			<span>{item.house}</span>
-			<span>{item.alive? 'vivo': 'muerto'}</span>
+			<div className="container__info">
+			<div className={`icon house_${item.house.toLowerCase()}`}></div>
+			<div className={`icon alive_${item.alive? 'live': 'dead'.toLowerCase()}`}></div>
+			</div>
 			</li>)
 		});
 	}
