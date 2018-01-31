@@ -6,9 +6,10 @@ class App extends Component {
 
 	constructor(props){
     super(props);
-    // this. = this..bind(this);
+		this.handleChange = this.handleChange.bind(this)
     this.state = {
       characters: [],
+			valorInput:''
     };
   }
 
@@ -18,42 +19,36 @@ class App extends Component {
 		.then(json => {
 			this.setState({
 				characters: json,
-				showOnlyShearch: true
 			});
 		//	console.log(this.state.characters);
 		});
-
 	}
 
 	paintCharacters() {
-		const listName = [];
+		const listName = this.state.characters.filter(item => item.name.toLowerCase().includes(this.state.valorInput));
 
-	for(const listCharacters of this.state.characters){
-
-		listName.push(<li className="Characters__item">
-
-			<h2>{listCharacters.name}</h2>
-			<img src={listCharacters.image} className="image" />
-			<span>{listCharacters.house}</span>
-			<span>{listCharacters.alive? 'vivo': 'muerto'}</span>
-
-			</li>);
+		return listName.map(item => {
+			return (<li className="Characters__item">
+			<h2>{item.name}</h2>
+			<img src={item.image} className="image" />
+			<span>{item.house}</span>
+			<span>{item.alive? 'vivo': 'muerto'}</span>
+			</li>)
+		});
 	}
-	return listName;
-}
-	filterCharacters() {
-		const filter = (event) => {
-			const input = document.getElementById('Seeker');
-			const valorInput = event.target.value;
-			if (valorInput.includes(valorInput)){
 
-			}
-		}
+
+	handleChange(event){
+		const searchCharacters = event.target.value
+		//console.log(writting)
+		this.setState({
+			valorInput: searchCharacters.toLowerCase()
+		});
 	}
 
 
   render() {
-
+console.log(this.state.valorInput)
     return (
       <div className="App">
         <header className="App-header">
@@ -61,7 +56,7 @@ class App extends Component {
         </header>
 				<main>
 				<div className="Container__page">
-				<input type="text" id="Seeker" className="Seeker" name="Seeker" />
+				<input type="text" id="Seeker" className="Seeker" name="Seeker" onChange={this.handleChange}></input>
 					<ul className="Container__characters">{this.paintCharacters()}</ul>
 				</div>
 				</main>

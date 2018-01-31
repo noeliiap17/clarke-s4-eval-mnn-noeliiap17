@@ -1,17 +1,28 @@
-// import React from '.react';
+// import React from 'react';
 //
-// class Characters extends React.Component {
-// render(){
-// 	return(
-// 		<div>
-// 		<h2>this.props.name</h2>
-// 		</div>
-// 	);
+// class CharacterCard extends React.Component{
+//
+// 	paintCharacters() {
+// 		const listName = [];
+//
+// 	for(const listCharacters of this.state.characters){
+//
+// 		listName.push(<li className="Characters__item">
+//
+// 			<h2>{listCharacters.name}</h2>
+// 			<img src={listCharacters.image} className="image" />
+// 			<span>{listCharacters.house}</span>
+// 			<span>{listCharacters.alive? 'vivo': 'muerto'}</span>
+//
+// 			</li>);
+// 	}
+// 	}
+// 	return listName;
 // }
+//   render() {
+//     return listName
+//     );
+//   }
 // }
 //
-//
-//
-//
-//
-// export default Characters;
+// export default CharacterCard;

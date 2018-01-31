@@ -36,6 +36,13 @@
 .image{
 	width: 200px;
 	height: 250px;
+	border-radius: 20px;
+}
+.gryffindor {
+	background-color: red;
+}
+.slytherin {
+	background-color: green;
 }
 
 @media all and (min-width:768px) {
