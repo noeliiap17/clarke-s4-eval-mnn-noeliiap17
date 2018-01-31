@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import NameCharacter from './components/Name'
 // import CharacterCard from './components/Characters';
 
 class App extends Component {
@@ -29,7 +30,7 @@ class App extends Component {
 
 		return listName.map(item => {
 			return (<li className={`Characters__item houseColor_${item.house.toLowerCase()}`}>
-			<h2>{item.name}</h2>
+			<NameCharacter name={item.name} />
 			<img src={item.image} className="image" />
 			<div className="container__info">
 			<div className={`icon house_${item.house.toLowerCase()}`}></div>
@@ -38,8 +39,6 @@ class App extends Component {
 			</li>)
 		});
 }
-
-
 
 	handleChange(event){
 		const searchCharacters = event.target.value
