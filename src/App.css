@@ -46,9 +46,10 @@
 }
 
 .container__info{
+	width: 200px;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 }
@@ -76,7 +77,11 @@
 	background-size: contain;
 }
 .alive_dead {
-	background-image: url(./images/calavera-55.jpg);
+	background-image: url(./images/calavera.jpg);
+	background-size: contain;
+}
+.alive_live {
+	background-image: url(./images/harry.png);
 	background-size: contain;
 }
 
